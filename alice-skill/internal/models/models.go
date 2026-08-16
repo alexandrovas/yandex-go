@@ -32,7 +32,13 @@ type ResponsePayload struct {
 	Text string `json:"text"`
 }
 
-// Sessino хранит данные о сессии пользователя.
+// Session хранит данные о сессии пользователя.
 type Session struct {
-	New bool `json:"new"`
+	New  bool        `json:"new"`
+	User RequestUser `json:"user"`
+}
+
+// RequestUser содержит данные об авторизованном пользователе навыка
+type RequestUser struct {
+	UserID string `json:"user_id"`
 }
